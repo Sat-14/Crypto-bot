@@ -1,0 +1,48 @@
+
+
+
+
+<ls-tabs #exchange-tabs .exchange-tabs>
+    <ls-box>
+        <div .exchange-field>
+            <span>You {{ exchange.type }}</span>
+            <input type="number" placeholder="0" step="1" min="0" id="exchange_keys">
+        </div>
+
+        <div .exchange-currency .keys>
+            <img src="/assets/img/key.svg" draggable="false" height="45" alt="Receiving currency">
+        </div>
+    </ls-box>
+
+    <div .space-xs/>
+
+    <div .full-width>
+        <table style="text-align: left">
+            <tr .stock-row>
+                <td>Stock</td>
+                <td>
+                    <span><span {{ prices.stock ?? '--' }} ls-tooltip="Keys in stock" /> / <span {{ prices.max ?? '--' }} ls-tooltip="Max keys" /></span>
+                    <img src="/assets/img/key.svg" alt="Key stock">
+                </td>
+            </tr>
+            <tr>
+                <td>Price per key</td>
+                <td>{{ exchange.unit_price }} $</td>
+            </tr>
+            <tr>
+                <td>Total ({{ exchange.explanation }})</td>
+                <td>{{ exchange.total ?? '--' }} $</td>
+            </tr>
+        </table>
+
+        <div .space-sm/>
+
+        <button #exchangeButton style="text-transform: capitalize" {{ exchange.type }}></button>
+    </div>
+</ls-tabs>
+
+<div .space-sm/>
+
+<ls-box .centered-content>
+    {{ exchange.info }}
+</ls-box>

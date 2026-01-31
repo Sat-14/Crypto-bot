@@ -1,0 +1,63 @@
+<div .exchange-tabs>
+    <div .ls-tabs-content>
+        <ls-box>
+            <div .exchange-field.wide>
+                <span>Amount (in USD):</span>
+                <input type="number" placeholder="0" step="1" min="0" id="withdraw_amount">
+            </div>
+        </ls-box>
+    
+        <div .space-xs/>
+
+        <ls-box>
+            <div .exchange-field>
+                <span>Currency</span>
+            </div>
+
+            <div .exchange-currency .crypto></div>
+        </ls-box>
+
+        <ls-box>
+            <div .exchange-field.wide>
+                <span>Wallet:</span>
+                <input type="text" placeholder="0x..." step="1" min="0" id="withdraw_address">
+            </div>
+        </ls-box>
+    
+        <div .space-xs/>
+    
+        <div .full-width>
+            <table style="text-align: left">
+                <tr>
+                    <td>Your balance</td>
+                    <td>
+                        {{ user.balance ?? '0' }} $
+                    </td>
+                </tr>
+                <tr>
+                    <td>Processing fee</td>
+                    <td>
+                        {{ exchange.withdraw_fee || '0.00' }} $
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total (estimated)</td>
+                    <td>
+                        {{ exchange.withdraw_total || '0.00' }} $
+                    </td>
+                </tr>
+            </table>
+        
+            <div .space-sm/>
+        
+            <button #withdraw_button disabled>Withdraw</button>
+        </div>
+    </div>
+</div>
+
+<div .space-sm/>
+
+<ls-box .centered-content>
+    <b>Make sure you double-check the information.</b> <br>
+    You can watch the status of your payout in the History tab - it will be completed within a few minutes.
+</ls-box>

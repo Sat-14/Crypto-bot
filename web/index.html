@@ -1,0 +1,121 @@
+<head>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Exchange your TF2 keys for crypto instantly with TF2Keys.trade. Fast, secure, and easy-to-use Steam key to cryptocurrency exchange supporting 350+ coins.">
+    <meta name="keywords" content="TF2 keys, buy keys, sell keys, Steam keys, crypto exchange, cryptocurrency, buy tf2, keys, Bitcoin, Ethereum, trade, PAIMON, TF2Keys.trade, fast, secure, instant, withdraw, deposit, exchange, tf2, Steam, Team Fortress 2">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Satwik">
+    <meta name="theme-color" content="#FFD600">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TF2Keys.trade | Steam Keys to Crypto">
+    <meta property="og:description" content="Exchange your TF2 keys for crypto instantly. Fast, secure, and easy-to-use Steam key to cryptocurrency exchange supporting 350+ coins.">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="/assets/img/exchange.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TF2Keys.trade | Steam Keys to Crypto">
+    <meta name="twitter:description" content="Exchange your TF2 keys for crypto instantly. Fast, secure, and easy-to-use Steam key to cryptocurrency exchange supporting 350+ coins.">
+    <meta name="twitter:image" content="/assets/img/exchange.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://tf2keys.trade/">
+
+    @use(ls:5.0.2[tabs, tooltips, toast, flat, reactive], google-fonts[Poppins], bootstrap-icons, /assets/css/index.css, /assets/js/index.js[defer]);
+
+    @page {
+        title: "TF2Keys.trade | Steam Keys to Crypto - Fast, Secure TF2 Key Exchange";
+        font: "Poppins", sans-serif;
+
+        accent: "yellow";
+        style: "flat";
+        theme: "dark";
+        
+        favicon: "/assets/img/favicon.png";
+    }
+
+    @import("/assets/css/initial.html");
+
+</head>
+
+<body .level-0>
+
+    @import("/navbar.html");
+
+    <div #app>
+        <div #sidebar .level-n1>
+            <div>
+                <div #vertical-profile-slot></div>
+    
+                <div .sidebar-item data-link="homepage" onclick="changePage(this)"><i .bi-house-fill></i> Home</div>
+                <div .sidebar-item data-link="exchange" onclick="changePage(this)"><i .bi-currency-exchange></i> Exchange</div>
+                <div .sidebar-item data-link="deposit" onclick="changePage(this)"><i .bi-wallet></i> Deposit</div>
+                <div .sidebar-item data-link="withdraw" onclick="changePage(this)"><i .bi-cash-stack></i> Withdraw</div>
+            </div>
+            
+            <div>
+                <!-- <a href="https://discord.gg/Nt97HWat86" target="_blank" rel="noopener noreferrer">
+                    <div .sidebar-item><i .bi-discord></i> Discord</div>
+                </a> -->
+
+                <div .sidebar-item data-link="profile" onclick="changePage(this)"><i .bi-person-fill></i> Profile</div>
+                
+                <div .sidebar-item data-link="history" onclick="changePage(this)"><i .bi-clock-history></i> History</div>
+                
+                <div .sidebar-item data-link="contact" onclick="changePage(this)"><i .bi-person-lines-fill></i> Contact us</div>
+            </div>
+        </div>
+    
+        <main>
+            <div .page #page-loader>
+                <div .loaderContainer>
+                    <div .loader/>
+
+                    <div .space-sm/>
+
+                    <span {{ bot.load_text! }} style="text-align: center" />
+
+                    <noscript>
+                        <h1>You need to enable JavaScript to be able to access this website!</h1>
+                    </noscript>
+                </div>
+            </div>
+
+            <div .page .page-centered #page-404 hidden>
+                <h1>404</h1>
+                <h2>Page not found</h2>
+                Sorry, but the page you are looking for does not exist.
+            </div>
+
+            <div .page #page-homepage hidden>
+                @import("/pages/homepage.html");
+            </div>
+
+            <div .page .page-centered #page-exchange hidden>
+                @import("/pages/exchange.html");
+            </div>
+
+            <div .page .page-centered #page-withdraw hidden>
+                @import("/pages/withdraw.html");
+            </div>
+
+            <div .page .page-centered #page-deposit hidden>
+                @import("/pages/deposit.html");
+            </div>
+
+            <div .page .page-centered #page-profile hidden>
+                @import("/pages/profile.html");
+            </div>
+
+            <div .page .page-centered #page-history hidden>
+                @import("/pages/history.html");
+            </div>
+
+            <div .page .page-centered #page-contact hidden>
+                @import("/pages/contact.html");
+            </div>
+        </main>
+    </div>
+
+</body>

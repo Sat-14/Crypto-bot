@@ -1,0 +1,58 @@
+<div class="exchange-tabs">
+    <div class="ls-tabs-content">
+        <ls-box>
+            <div class="exchange-field">
+                <span>Amount:</span>
+                <input type="number" placeholder="0" min="0" id="deposit_amount">
+            </div>
+
+            <div class="exchange-currency .crypto"></div>
+        </ls-box>
+    
+        <div class="space-xs"/>
+    
+        <div class="full-width">
+            <table style="text-align: left">
+    <tr>
+        <td>Processing fee (deducted)</td>
+        <td>
+            {{ exchange.deposit_fee || '0.00' }} $
+        </td>
+    </tr>
+    <tr>
+        <td>Total you receive</td>
+        <td>
+            {{ exchange.deposit_total || '0.00' }} $
+        </td>
+    </tr>
+</table>
+            
+        
+            <div class="space-sm"/>
+
+            <!-- Static Warning Message -->
+            <div style="background-color: #2a2a2a; border-left: 4px solid #c9830d; padding: 10px; margin-bottom: 15px; border-radius: 4px; font-size: 0.9rem;">
+                <span style="color: #c9830d;">⚠️ Warning:</span> If you're not using a stablecoin, the deposit value may change if the price fluctuates significantly during the transfer period.
+            </div>
+
+            <button id="deposit_button" disabled>Add balance</button>
+
+            <div class="space-sm"/>
+            
+            <span style="font-size: smaller; color: var(--base-30)">Do not forget to include any network fees.</span>
+        </div>
+    </div>
+</div>
+
+<div class="space-sm"/>
+
+<ls-box .centered-content>
+    After confirmation, your balance will be added.<br>
+    Minimum deposit is currently {{ prices.minimum_order }}$.
+</ls-box>
+
+<div class="space-sm"/>
+
+<ls-box .centered-content>
+    Make sure you watch the status in the History tab.
+</ls-box>

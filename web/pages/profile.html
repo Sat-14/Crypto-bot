@@ -1,0 +1,26 @@
+<ls-box style="padding: 20px" .centered-content>
+    <img {{ user.avatar || '/assets/img/user.svg' }} .pfp width="64" height="64" alt="User avatar" draggable="false"> <br>
+
+    <div .space-xs/>
+
+    <h2 style="margin: 0" {{ user.username }} />
+    Steam ID: {{ user.steamID_64 }}
+
+    <div .space-xs/>
+
+    <hr>
+
+    <ls-box .contained .level-2 style="text-align: left">
+        Set your tradelink (find it <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url" target="_blank" rel="noopener noreferrer">here <i .bi-box-arrow-up-right></i></a>): <br>
+
+        <div .space-xs/>
+
+        <input type="text" placeholder="Paste your tradelink here" #tradelink style="width: 100%">
+    </ls-box>
+
+    {{ user.tradelink_setting_message || '' }}
+
+    <div .space-md/>
+
+    <button style="width: 100%" onclick="location.replace(location.origin + ':52000/logout')">Log-Out</button>
+</ls-box>

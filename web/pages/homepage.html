@@ -1,0 +1,60 @@
+<div .split-panels>
+    <div .showcase>
+        <img src="/assets/img/exchange.svg" .cover-image alt="Trade TF2 Keys for Crypto" width="60%">
+
+        <h1>Exchange <span .color>TF2 Keys</span> for <span .color>Crypto</span></h1>
+
+        {{ bot.name }} is a bot that allows you to exchange your TF2 keys for crypto currencies like Bitcoin, Ethereum, and more. It's fast, secure, and easy to use. <br>
+
+        <div .space-md/>
+
+        <button .pill onclick="changePage('exchange')">Get started</button>
+    </div>
+
+    <div .centered-layout .exchange-window>
+        <ls-tabs #transfer-tabs .exchange-tabs>
+            <ls-box .sending>
+                <div .exchange-field>
+                    You send <br>
+                    <input type="number" placeholder="0" min="0" id="sent_money">
+                </div>
+    
+                <div .exchange-currency .crypto></div>
+            </ls-box>
+    
+            <i .bi-arrow-down-up onclick="toggleTabs()" style="cursor: pointer"></i>
+    
+            <ls-box .receiving>
+                <div .exchange-field>
+                    You receive <br>
+                    <input type="number" placeholder="0" step="1" min="0" id="received_keys">
+                </div>
+    
+                <div .exchange-currency .keys>
+                    <img src="/assets/img/key.svg" draggable="false" height="45" alt="Receiving currency">
+                </div>
+            </ls-box>
+    
+            <div .space-xs/>
+    
+            <button style="width: 100%" .elevated onclick="changePage('exchange')">Start exchanging!</button>
+        </ls-tabs>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <div .centered-layout-v style="text-align: center; padding: 0 40px">
+        <div .space-sm/>
+        
+        <img src="/assets/img/currencies.svg" .curencies alt="Crypto currency icons"> <br>
+        <h2>Nearly <span .color>350</span> crypto currencies supported!</h2>
+
+        <div .space-sm/>
+    </div>
+</div>
+
+<div .space-md/>
+
+@import("/assets/img/background.svg");

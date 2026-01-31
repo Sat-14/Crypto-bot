@@ -1,0 +1,40 @@
+<nav>
+    <button .show-600 .clear.square #menu-toggle>
+        <i .bi-list></i>
+    </button>
+
+    <div .hide-600 .profile #profile-bot>
+        <img src="/assets/img/logo.jpg" .pfp alt="Bot logo" draggable="false">
+
+        <b {{ bot.name }} />
+
+        <hr>
+
+        <div .centered-horizontal>
+            <span><span {{ prices.stock ?? '--' }} ls-tooltip="Keys in stock" /> / <span {{ prices.max ?? '--' }} ls-tooltip="Max keys" /></span>
+            <img src="/assets/img/key.svg" alt="Key stock">
+        </div>
+
+        
+        <hr>
+
+        <div .centered-horizontal>
+            <span>S: <span {{ prices.buy ?? '--' }} ls-tooltip="How much you pay per key" />$ / B: <span {{ prices.sell ?? '--' }} ls-tooltip="How much you get per key" />$</span>
+            <img src="/assets/img/pricetag.svg" alt="Prices">
+        </div>
+    </div>
+
+    <img #steam-login draggable="false" onclick="steamLogin()" src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png" alt="Sign in with Steam">
+
+    <div #profile-user .profile style="display: none" onclick="changePage('profile')">
+        <span {{ user.username }} />
+        <hr>
+        
+        <div .centered-horizontal .hide-450>
+            <span {{ user.balance ?? '0' }} ls-tooltip="Your on-site balance"></span>$
+            <img src="/assets/img/pricetag.svg" alt="Prices">
+        </div>
+
+        <img {{ user.avatar || '/assets/img/user.svg' }} .pfp alt="User avatar" draggable="false">
+    </div>
+</nav>
